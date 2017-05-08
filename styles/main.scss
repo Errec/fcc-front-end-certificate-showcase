@@ -11,11 +11,9 @@ body, html
   background-size: cover
   height: 100%
   display: block
-  position: relative
 
 .main-project__grid
-  position: absolute
-  bottom: 5vh
+  padding-top: 35vh
   display: flex
   flex-wrap: wrap
   list-style: none
@@ -28,10 +26,25 @@ body, html
     flex: 10
 
 .main-project__img
+  cursor: pointer
   height: 100%
   width: 100%
   object-fit: cover
   outline: solid #724724 2px
 
 .main-project__item
-  height: 60vh !important
+  height: 60vh
+
+@media screen and (max-width: 720px)
+  .main-project__grid
+    padding: 15vh 20px 0 20px
+    display: block
+
+  .main-project__item
+    height: 10vh
+
+  .main
+    background-repeat: repeat-y
+    background-color: #EDC00A
+    background-position: center
+    background-size: 50%
