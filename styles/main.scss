@@ -8,8 +8,8 @@ body, html
   height: 100%
   display: block
   &:after
-    content: "";
     background-image: url(../img/bg.jpg)
+    content: "";
     background-repeat: no-repeat
     background-position: center 30%
     background-size: cover
@@ -25,6 +25,7 @@ body, html
     animation-name: change-bg
     animation-fill-mode: forwards
     animation-duration: 4s
+    animation-delay: 1s
 
 @keyframes change-bg
   0%
@@ -48,6 +49,7 @@ body, html
   animation-name: change-filter
   animation-fill-mode: forwards
   animation-duration: 4s
+  animation-delay: 1s
   &:hover
     flex: 10
 
@@ -78,7 +80,23 @@ body, html
     height: 10vh
 
   .main
-    background-repeat: repeat-y
-    background-color: #EDC00A
     background-position: center
     background-size: 50%
+    &:after
+      background-color: #EDC00A
+      background-repeat: repeat-y
+      background-size: 50%
+      background-image: url(../img/bg.jpg)
+      content: "";
+      background-repeat: repeat-y
+      background-position: center 30%
+      opacity: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+      -webkit-filter: grayscale(0); /* Old WebKit */
+      filter: grayscale(0);
+      animation-name: none
