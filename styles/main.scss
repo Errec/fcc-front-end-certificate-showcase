@@ -5,12 +5,34 @@ body, html
   height: 100%
 
 .main
-  background-image: url(../img/bg.jpg)
-  background-repeat: no-repeat
-  background-position: center 30%
-  background-size: cover
   height: 100%
   display: block
+  &:after
+    content: "";
+    background-image: url(../img/bg.jpg)
+    background-repeat: no-repeat
+    background-position: center 30%
+    background-size: cover
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    -webkit-filter: grayscale(0); /* Old WebKit */
+    filter: grayscale(0);
+    animation-name: change-bg
+    animation-fill-mode: forwards
+    animation-duration: 4s
+
+@keyframes change-bg
+  0%
+    opacity: 1
+    filter: grayscale(0)
+  100%
+    opacity: 0.7
+    filter: grayscale(1)
 
 .main-project__grid
   padding-top: 35vh
@@ -20,10 +42,20 @@ body, html
   padding-left: 0
 
 .main-project__item
-  transition: all 0.5s ease-in-out 0.3s
+  transition: flex 0.5s ease-in-out 0.3s
   flex: 1
+  filter: grayscale(1)
+  animation-name: change-filter
+  animation-fill-mode: forwards
+  animation-duration: 4s
   &:hover
     flex: 10
+
+@keyframes change-filter
+  0%
+    filter: grayscale(1)
+  100%
+    filter: grayscale(0)
 
 .main-project__img
   cursor: pointer
@@ -34,6 +66,8 @@ body, html
 
 .main-project__item
   height: 60vh
+
+
 
 @media screen and (max-width: 720px)
   .main-project__grid
